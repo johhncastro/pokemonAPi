@@ -1,0 +1,8 @@
+#pokemonTitle {
+    display: flex;
+    justify-content: center;
+}
+.center-text{
+    display: flex;
+    justify-content: center;
+}
