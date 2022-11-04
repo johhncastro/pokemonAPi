@@ -1,7 +1,7 @@
 const url = "https://pokeapi.co/api/v2/pokemon/"
 // const options = {"url": "https://pokeapi.co/api/v2/pokemon/" + pokemon, "method": "GET"}
 
-    // `<img src="${pokemon.sprites.other["official-artwork"].front_default}" style="height: 185px; ">`
+    // `<img src="${pokemon.sprites.other["official-artwork"].front_default}">`
 
 const pokemonIMG = (pokemon) => `<img src="${pokemon.sprites.front_default}">`;
 
@@ -15,6 +15,18 @@ function pokemonApiCall (pokemon){
 }
 // the function above makes an api call to the poke api and displays the information about the console
 
-function displayPokemon (pokemon){
 
-}
+
+// function searchPokemon (){
+//         document.getElementById('search-btn').onclick(function (){
+//         pokemonApiCall(document.getElementById('search-bar').value);
+//     });
+// }
+
+
+
+
+$('#search-btn').click(function (e){
+    const pokemon = $("search-bar").val();
+    pokemonApiCall(pokemon);
+});
