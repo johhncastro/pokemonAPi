@@ -1,5 +1,5 @@
 const url = "https://pokeapi.co/api/v2/pokemon/"
-// const options = {"url": "https://pokeapi.co/api/v2/pokemon/" + pokemon, "method": "GET"}
+// const option = {"url": url + pokemon, "method": "GET"}
 
     // `<img src="${pokemon.sprites.other["official-artwork"].front_default}">`
 
@@ -7,7 +7,7 @@ const pokemonIMG = (pokemon) => `<img src="${pokemon.sprites.front_default}">`;
 
 
 function pokemonApiCall (pokemon){
-    const options = {"url": "https://pokeapi.co/api/v2/pokemon/" + pokemon, "method": "GET"}
+    const options = {"url": url + pokemon, "method": "GET"}
     $.ajax(options).then(function (data) {
         console.log(data);
         $('#pokemonImage').append(pokemonIMG(data))
@@ -30,3 +30,14 @@ $('#search-btn').click(function () {
     const pokeName = $('#search-bar').val();
     pokemonApiCall(pokeName);
 });
+
+function oneFiveOne(){
+    const pokemon = ""
+    const options = {"url": url + pokemon, "method": "GET"}
+    $.ajax(options).then(function () {
+        for(let i = 1; i < 152; i++) {
+            pokemonApiCall(i)
+        }
+    });
+}
+oneFiveOne();
