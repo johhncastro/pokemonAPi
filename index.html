@@ -4,23 +4,25 @@
     <meta charset="UTF-8">
     <title>Pokemon API Project</title>
     <link rel="stylesheet" href="css/main.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/boosted@5.2.1/dist/css/boosted.min.css" rel="stylesheet" integrity="sha384-pOS5XpkcgtRr25C31i+y6ge+1U4oBWadkcnugQSoW6Ba2cYORcVNCwTOGqngyl1v" crossorigin="anonymous">
 </head>
-<body>
-    <div id="header">
-        <h1 id="pokemonTitle">Pokemon API Project</h1>
-        <p class="center-text"> This is a Pokemon web app that is used for searching and displaying your favorite Pokemon! </p>
-    </div>
-    <div  class="center-text">
-        <input id="search-bar" type="search" placeholder="Search Pokemon">
-        <button id="search-btn">._.</button>
-    </div>
+<body style="background-color: gray">
+    <nav class="navbar navbar-light bg-light justify-content-around">
+        <a>PokemonAPI</a>
+        <div  class="center-text">
+            <input id="search-bar" type="search" placeholder="Search Pokemon">
+            <button id="search-btn">._.</button>
+        </div>
+    </nav>
     <div class="center-text">
         <div id="pokemonImage"></div>
     </div>
 
 </body>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/boosted@5.2.1/dist/js/boosted.bundle.min.js" integrity="sha384-FQV2xeDatbh7g/Hg/XDDwYs/sTeXu/cIX2GBtqGmlATkYQZSt8Rm7MhvHqELj3Bk" crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
 <script src="js/pokeApi.js"></script>
 </html>

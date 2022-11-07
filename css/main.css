@@ -1,3 +1,7 @@
+.html{
+    background: gray;
+}
+
 #pokemonTitle {
     display: flex;
     justify-content: center;

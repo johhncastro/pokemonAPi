@@ -26,7 +26,7 @@ function pokemonApiCall (pokemon){
 
 
 
-$('#search-btn').click(function (e){
-    const pokemon = $("search-bar").val();
-    pokemonApiCall(pokemon);
+$('#search-btn').click(function () {
+    const pokeName = $('#search-bar').val();
+    pokemonApiCall(pokeName);
 });
