@@ -16,3 +16,8 @@
     border: 1px blue solid;
     /*border-color: red;*/
 }
+
+#pokemon-desc{
+    border: 1px greenyellow solid;
+    height: 400px;
+}
