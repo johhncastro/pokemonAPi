@@ -9,6 +9,7 @@
 .center-text{
     display: flex;
     justify-content: center;
+
 }
 
 
@@ -19,5 +20,16 @@
 
 #pokemon-desc{
     border: 1px greenyellow solid;
-    height: 400px;
+    height: 500px;
+    width: 900px;
+}
+
+#pokemonCard{
+    background-image: url("/assets/pokedex-template.jpeg");
+    /*background-size: cover;*/
+    /*background-repeat: no-repeat;*/
+    width: 900px;
+}
+.h1{
+    color: white;
 }

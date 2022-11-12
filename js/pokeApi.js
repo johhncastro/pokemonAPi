@@ -12,7 +12,7 @@ const url = "https://pokeapi.co/api/v2/pokemon/"
 
 
 const searchedPokemon = (pokemon) =>
-    `<div>
+    `<div id="pokemonCard">
         <h1 class="center-text">${pokemon.name}</h1>
         <img src="${pokemon.sprites.front_default}" style="width: 300px;">
         <div class="d-flex">
@@ -49,7 +49,7 @@ function searchApiCall(pokemon){
 $('#search-btn').click(function () {
     document.getElementById("search-bar").style.display = "none";
     document.getElementById("search-btn").style.display = "none";
-    const pokeName = $('#search-bar').val();
+    const pokeName = $('#search-bar').val().toLowerCase();
     searchApiCall(pokeName)
     $("#findPokemon").append(findNewPokemon())
 });
@@ -64,3 +64,7 @@ function oneFiveOne(){
     });
 }
 oneFiveOne();
+
+
+
+
