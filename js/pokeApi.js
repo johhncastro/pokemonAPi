@@ -61,15 +61,33 @@ $('#search-btn').click(function () {
     $("#findPokemon").append(findNewPokemon())
 });
 
-function oneFiveOne(){
-    const pokemon = ""
-    const options = {"url": url + pokemon, "method": "GET"}
-    $.ajax(options).then(function () {
-        for(let i = 1; i < 152; i++) {
-            pokemonApiCall(i)
-        }
-    });
+
+
+function oneFiveOne() {
+    let promise = Promise.resolve(); // first promise in the chain
+    for (let i = 1; i < 152; i++) {
+        const options = { "url": url + i, "method": "GET" } // update pokemon URL for each iteration
+        const promiseCall = () => new Promise((resolve, reject) => {
+            $.ajax(options).then((data) => {
+                $('#pokemonImage').append(pokemonIMG(data)); // display Pokemon image
+                resolve(); // resolve promise to signal the call is done
+            })
+                .catch((error) => {
+                    console.log(`Error fetching data for Pokemon ${i}: ${error}`);
+                    reject(error);
+                })
+        });
+        promise = promise.then(promiseCall); // add the current promise to the chain
+    }
+    promise
+        .then(() => {
+            console.log("All Pokemon loaded successfully");
+        })
+        .catch((error) => {
+            console.log(`Failed to complete all Pokemon calls: ${error}`);
+        })
 }
+
 oneFiveOne();
 
 
