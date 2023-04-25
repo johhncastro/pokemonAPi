@@ -12,19 +12,26 @@ const url = "https://pokeapi.co/api/v2/pokemon/"
 
 
 const searchedPokemon = (pokemon) =>
-    `<div id="pokemonCard">
-        <h1 class="center-text">${pokemon.name}</h1>
-        <img src="${pokemon.sprites.front_default}" style="width: 300px;">
-        <div class="d-flex">
-            <h3>Pokemon ID: ${pokemon.id}</h3>
-            <h3>${pokemon.types.type}</h3>
+    `<div class="card" style="width: 18rem;">
+    <img src="${pokemon.sprites.front_default}" class="card-img-top" alt="${pokemon.name}">
+    <div class="card-body">
+      <h5 class="card-title">${pokemon.name}</h5>
+      <p class="card-text">ID: ${pokemon.id}</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="types">
+          ${pokemon.types.map(type => `<span class="badge badge-primary">${type.type.name}</span>`)}
         </div>
-    </div>`
+      </div>
+    </div>
+  </div>`;
 
-const pokemonIMG = (pokemon) => `<div style="border: 1px solid red">
-                                    <h6 class="text-center">${pokemon.name}</h6>    
-                                    <img src="${pokemon.sprites.front_default}" style="width: 150px">
-                                 </div>`;
+
+const pokemonIMG = (pokemon) =>
+    `<div class="mx-3 my-4" style="border: 1px solid #ccc; border-radius: 8px; overflow: hidden;">
+    <h6 class="text-center mt-3 mb-0">${pokemon.name}</h6>    
+    <img src="${pokemon.sprites.front_default}" class="d-block mx-auto my-3" style="width: 150px;" alt="${pokemon.name} picture">
+  </div>`;
+
 
 const findNewPokemon = () => `<button onclick="window.location.reload()">Find New Pokemon</button>`
 
